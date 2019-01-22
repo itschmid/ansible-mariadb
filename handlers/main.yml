@@ -1,0 +1,6 @@
+---
+- name: start_mariadb
+  service: name={{ mariadb_service }} state=started enabled=yes
+
+- name: restart_mariadb
+  service: name={{ mariadb_service }} state=restarted
