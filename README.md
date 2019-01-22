@@ -1,6 +1,6 @@
 mariadb
-=========
+=======
 
-Install and configure MariaDB
+Installing and configuring mariadb
 
 
