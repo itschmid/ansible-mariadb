@@ -1,0 +1,10 @@
+---
+
+
+- name: mariarpm
+  package: name={{ item }} state=installed
+  with_items:
+    - mariadb
+    - mariadb-client
+    - mariadb-tools
+    - python-mysqlclient

@@ -1,11 +1,10 @@
 ---
-- name: mariarpm
-  package: name={{ item }} state=installed
-  with_items:
-    - mariadb
-    - mariadb-client
-    - mariadb-tools
-    - python-mysql
+
+- include_tasks: sles12_rpms.yml
+  when: ansible_distribution_version == '12'
+
+- include_tasks: sles15_rpms.yml
+  when: ansible_distribution_version == '15'
 
 - name: create my.cnf
   template:
@@ -20,5 +19,7 @@
   mysql_db:
     name: "{{ mariadb }}"
     state: present
+
+
 
 
